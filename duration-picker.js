@@ -120,7 +120,7 @@
         var html = '<div class="durationpicker-container ' + settings.classname + '">';
         var type = settings.type;
         for (var item in stages){
-            if(typeof settings[stages[item]]['min'] != 'undefined')
+            if(typeof settings[stages[item]] != 'undefined' && typeof settings[stages[item]]['min'] != 'undefined')
                 html += '<div class="durationpicker-innercontainer"><input min="' + settings[stages[item]]['min'] + '" max="' + settings[stages[item]]['max'] + '" placeholder="0" type="' + type + '" id="duration-' + stages[item] + '" class="durationpicker-duration" ><span class="durationpicker-label">' + settings[stages[item]]['label'] + '</span></div>';
         }
         html += '</div>';
