@@ -110,7 +110,8 @@
         var stages = [];
         for (var key in Object.keys(settings)){
             if (['classname', 'responsive', 'type'].indexOf(Object.keys(settings)[key]) == -1) {
-                stages.push(Object.keys(settings)[key]);
+                if(typeof Object.keys(settings)[key] != 'function')
+                    stages.push(Object.keys(settings)[key]);
             }
         }
         return stages
